@@ -29,12 +29,12 @@ public class Library implements Serializable {
         publications.put(publication.getTitle(),publication);
     }
 
-    public void addUser(LibraryUser user){
-        if(users.containsKey(user.getPesel())){
-            throw new UserAlreadyExistsException("" +
-                    "Użytkownik ze wskazanym peselem już ustnieje "+ user.getPesel());
-
-        }        users.put(user.getPesel(), user);
+    public void addUser(LibraryUser user) {
+        if(users.containsKey(user.getPesel()))
+            throw new UserAlreadyExistsException(
+                    "Użytkownik ze wskazanym peselem już istnieje " + user.getPesel()
+            );
+        users.put(user.getPesel(), user);
     }
 
     public boolean removePublication(Publication pub) {
