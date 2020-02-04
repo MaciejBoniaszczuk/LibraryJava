@@ -68,7 +68,7 @@ public class CsvFileManager implements FileManager {
         String firstName = split[0];
         String lastName = split[1];
         String pesel = split[2];
-        return null;
+        return new LibraryUser(firstName,lastName,pesel);
     }
 
     private void importPublications(Library library) {
