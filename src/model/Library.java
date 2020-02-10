@@ -20,6 +20,9 @@ public class Library implements Serializable {
         list.sort(comparator);
         return list;
     }
+    public Optional<Publication> findPublicationByTitle(String title) {
+        return Optional.ofNullable(publications.get(title));
+    }
 
     public Map<String, LibraryUser> getUsers() {
         return users;
